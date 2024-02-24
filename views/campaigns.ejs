@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/_head.ejs') %>
+<body>
+<%- include('partials/_header.ejs') %>
+<main role="main" class="container mt-4">
+  <h2>Campaign Statistics</h2>
+  <div>
+    <select id="campaignSelect" class="form-select mb-3" aria-label="Select campaign">
+      <option selected>Select a Campaign</option>
+      <% campaigns.forEach(function(campaign){ %>
+        <option value="<%= campaign.id %>"><%= campaign.name %></option>
+      <% }); %>
+    </select>
+  </div>
+  <div id="campaignStats"></div>
+  <canvas id="campaignChart"></canvas>
+</main>
+<script src="/js/campaigns.js"></script>
+</body>
+<%- include('partials/_footer.ejs') %>
+</html>

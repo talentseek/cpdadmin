@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/_head.ejs') %>
+<body>
+<%- include('partials/_header.ejs') %>
+<main role="main" class="container mt-4">
+    <h2>Admin Panel</h2>
+    <form id="add-user-form">
+        <div class="mb-3">
+            <input type="text" name="firstName" placeholder="First Name" required class="form-control">
+            <input type="text" name="lastName" placeholder="Last Name" required class="form-control">
+            <input type="text" name="companyName" placeholder="Company Name" required class="form-control">
+            <input type="email" name="email" placeholder="Email" required class="form-control">
+            <input type="password" name="password" placeholder="Password" required class="form-control">
+            <input type="text" name="campaignIds" placeholder="Campaign IDs (comma separated)" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Add User</button>
+    </form>
+    <div id="users-list">
+        <!-- Users will be populated here by admin.js -->
+    </div>
+</main>
+<script src="/js/admin.js"></script>
+</body>
+<%- include('partials/_footer.ejs') %>
+</html>
